@@ -7,6 +7,8 @@
 				'oppo' => array('Ten_Sp' => 'OPPO', 'hinhanh' => '<img style="width:3%" src="a3.jpg">', 'gia' => 700, 
 					'giam_gia' => 0),
 			);
+
+	echo "<br><h4>In ra các sản phẩm</h4><br>";
 	function displayClass($arr) {
 		
 		$i = 1;
