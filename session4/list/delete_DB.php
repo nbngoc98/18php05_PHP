@@ -9,5 +9,5 @@
 	$sql = "DELETE FROM form WHERE id = $id";
 	mysqli_query($connect, $sql);
 	// Redirect
-	header("Location: select_DB.php");
+	header("Location: form.php");
 ?>
