@@ -58,16 +58,17 @@
 				$errListitem ="";
 			}
 
-			$image_sp = $_FILES['image'];
+			$imageUpload = $_FILES['image'];
 			// 1. lay duoc ten anh de luu vao database
-			$image = uniqid().'-'.$image_sp['name'];
-			$pathSave = 'up_image/';
+			$imageName = uniqid().'-'.$imageUpload['name'];
+			// $pathSave = 'uploads/'.$avatar;
 			// 2. Upload anh len thu muc luu tru
-			move_uploaded_file($image_sp['tmp_name'], $pathSave.$image);
+			$pathSave = 'uploads/';
+			move_uploaded_file($imageUpload['tmp_name'], $pathSave.$imageName);
 			
 			if ($check) {
 				$sql = "INSERT INTO product (name, price, desscription, image, created, listitem)
-				VALUES ('$name', '$price', '$desscription','$image','$created','$listitem')";
+				VALUES ('$name', '$price', '$desscription','$imageName','$created','$listitem')";
 				mysqli_query($connect, $sql);
 				header("Location:list.php");
 			}
@@ -82,7 +83,7 @@
 		<p>Mô tả:<textarea rows="file" cols="50" name="desscription" value="<?php echo $desscription?>"></textarea><span 
 		style="color:red"><?php echo $errDesscription; ?></span></p>
 		
-		<p>File ảnh:<input type="file" name="image" value="<?php echo $image?>"></p>
+		<p>File ảnh:<input type="file" name="image"></p>
 		
 		<p>Danh mục sản phẩm:<input type="text" name="listitem" value="<?php echo $listitem?>"><span style="color:red"><?php echo 
 		$errListitem; ?></span></p>

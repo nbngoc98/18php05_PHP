@@ -29,7 +29,7 @@
                         echo "<h4>Kết quả tìm kiếm với từ khóa:</h4> ";
                         echo "<table><tr><th>ID</th><th>Name</th><th>Price</th><th>Desscription</th><th>Image</th><th>Created</th><th>List_item</th><th></th><th></th></tr>";
                         while ($row = $result->fetch_assoc()) {
-                            $image = 'up_image/'.$row['image'];
+                            $image = 'uploads/'.$row['image'];
                             $id = $row['name'];
                             echo "<tr><td>" . $row['id']. "</td><td>" . $row['name']. "</td><td>" . $row['price']. "</td><td>" . $row['desscription']. "</td><td><img src='$image' width='10%'></td><td>" . $row['created']. "</td><td>" . $row['listitem']. "</td><td><a href='delete_DB.php?id=$id'>DELETE</a></td><td><a href='edit_DB.php?id=$id'>EDIT</a></td></tr>";
                         }
