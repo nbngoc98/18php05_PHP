@@ -15,7 +15,7 @@
 	<?php 
 		// ket noi database
 		include 'connect.php';
-		// Add User
+		
 		$errName ="";
 		$errPrice ="";
 		$errDesscription ="";
