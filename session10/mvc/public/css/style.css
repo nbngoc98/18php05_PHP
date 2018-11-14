@@ -1,0 +1,8 @@
+ul li{
+	list-style-type: none;
+	float: left;
+	margin: 5px;
+}
+a {
+	text-decoration: none;
+}
