@@ -33,22 +33,53 @@
 						//Do du lieu ra views
 						include 'views/templates/list/list_product.php';
 						break;
-					case 'edit':
-						# code...
-						break;
 					case 'add':
-						$listModel = new listModel();
-						$post = $listModel->addList();
-						//Do du lieu ra views
+					    // click vào action=add hiển thị ra view
 						include 'views/templates/list/add_list.php';
+						break;
+					case 'doadd':
+						$name = $_POST['name'];
+						$price = $_POST['price'];
+						$description = $_POST['description'];	
+						$imageUpload = $_FILES['image'];
+						// 1. lay duoc ten anh de luu vao database
+						$imageName = uniqid().'-'.$imageUpload['name'];
+						// $pathSave = 'uploads/'.$avatar;
+						// 2. Upload anh len thu muc luu tru
+						$pathSave = 'public/uploads/';
+						move_uploaded_file($imageUpload['tmp_name'], $pathSave.$imageName);	
+						$listModel = new listModel();
+						$post = $listModel->doaddList($name, $price, $description,$imageName);
+						
 						break;
 					case 'delete':
 						# code...
 						$id = $_GET['id'];
 						$listModel = new listModel();
 						$post = $listModel->deleteList($id);
-						//Do du lieu ra views
-						header('views/templates/list/list_product.php');
+						
+						break;
+					case 'edit':
+					    // click vào action=edit hiển thị ra view
+						include 'views/templates/list/edit_list.php';
+						break;
+					case 'doedit':
+						$id = $_GET['id'];
+						  $name = $_POST['name'];
+						  $price = $_POST['price'];
+						  $description = $_POST['description'];
+						  $imageUpload  = $_FILES['image'];
+						  $product_category_id = $_POST['product_category_id'];
+						  if (!$imageUpload['error']) {
+						        $imageName = uniqid().'-'.$imageUpload['name'];
+						        $pathSave = 'uploads/';
+						        move_uploaded_file($imageUpload['tmp_name'], $pathSave.$imageName);
+						        $image = $imageName;
+						        // Remove anh cu khoi UPLOADS folder
+						        unlink($imageEdit);
+						      }
+						$listModel = new listModel();
+						$post = $listModel->doeditList( $name, $price, $description, $image, $id);
 						break;
 					default:
 						# code...

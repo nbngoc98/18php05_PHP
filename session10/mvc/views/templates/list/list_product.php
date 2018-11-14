@@ -33,14 +33,17 @@
                       <th></th>
                     </tr>
                   <?php foreach ($post as $row) : ?>
+                    <?php
+                      $id = $row['id'];
+                    ?>
                     <tr>
                       <td><?php echo $row['id'] ?></td>
                       <td><?php echo $row['name'] ?></td>
                       <td><?php echo $row['description'] ?></td>
                       <td><?php echo $row['price'] ?></td>
                       <td><img src="<?php echo 'public/uploads/'.$row['image'] ?>" width='4%'></td>
-                      <td><a href='edit_product.php?idEdit=$id'><button type='button' class='btn btn-warning'>Edit</button></a></td>
-                      <td><a href="admin.php?controller=list&action=delete&id='$id'"><button type='button' class='btn btn-danger'>Delete</button></a></td>
+                      <td><a href="admin.php?controller=list&action=edit&id=<?php echo$id?>"><button type='button' class='btn btn-warning'>Edit</button></a></td>
+                      <td><a href="admin.php?controller=list&action=delete&id=<?php echo$id?>"><button type='button' class='btn btn-danger'>Delete</button></a></td>
                     </tr>
                   <?php endforeach; ?>
 

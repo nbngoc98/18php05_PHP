@@ -14,7 +14,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" name="AddProduct" action="admin.php?controller=list&action=doadd" method="post" enctype="multipart/form-data">
+            <form role="form" name="AddProduct" action="admin.php?controller=list&action=doedit" method="post" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tên sản phẩm</label>
@@ -45,7 +45,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-block btn-primary btn-lg" name="add_product" value="Add product">Submit</button>
+                <button type="submit" class="btn btn-block btn-primary btn-lg" name="edit" value="Add product">Submit</button>
               </div>
             </form>
           </div>
