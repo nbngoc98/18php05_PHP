@@ -88,6 +88,7 @@
 			          while ($row = $result->fetch_assoc()) {
 			            $id = $row['id'];
 			            $image = 'public/uploads/'.$row['image'];
+			            $currency = ' VNĐ';
 					echo "
 						<div class='row'>
 							<div class='span4'>
@@ -100,7 +101,7 @@
 									<strong>Reward Points:</strong> <span>0</span><br>
 									<strong>Availability:</strong> <span>Out Of Stock</span><br>								
 								</address>									
-								<h4><strong>Price:" . $row['price']. "</strong></h4>
+								<h4><strong>Price:" . $row['price'].$currency. "</strong></h4>
 							</div>
 							<div class='span5'>
 								<form class='form-inline'>

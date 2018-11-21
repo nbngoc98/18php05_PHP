@@ -41,13 +41,14 @@
 								          while ($row = $result->fetch_assoc()) {
 								            $id = $row['id'];
 								            $image = 'public/uploads/'.$row['image'];
+								            $currency = ' VNĐ';
 								            echo"<li class='span3'>
 													<div class='product-box'>
 														<span class='sale_tag'></span>
-														<p><a href='index.php?controller=home&action=detail&id=$id'><img src='$image' width='70%'></a></p>
-														<a href='product_detail.html' class='title'>" . $row['name']. "</a><br/>
-														<a href='products.html' class='category'>" . $row['desscription']. "</a>
-														<p class='price'>" . $row['price']."</p>
+														<p><a href='index.php?controller=home&action=detail&id=$id'><img src='$image' width='70%' style='margin-top: 20px;'></a></p>
+														<a href='index.php?controller=home&action=detail&id=$id' class='title'>" . $row['name']. "</a><br/>
+														<a href='#' class='category'>" . $row['desscription']. "</a>
+														<p class='price'>" . $row['price'].$currency."</p>
 													</div>
 												</li>";
 								                   

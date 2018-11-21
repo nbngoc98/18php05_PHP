@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2018 at 05:11 AM
+-- Generation Time: Nov 21, 2018 at 12:43 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -43,10 +43,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `desscription`, `image`, `created`, `listitem`) VALUES
-(2, 'Ão phao ná»¯', 2200000, 'Ão phao ná»¯ dÃ¡ng dÃ i chá»¯ A liá»n mÅ© PLBBB', '5bf4cc3fdeb38-aeVDStEx.jpg', '2018-10-25 00:00:00', 'iPhone'),
-(3, 'Ão khoÃ¡c ná»¯', 2500000, 'Ão khoÃ¡c ná»¯ áº¥n tÆ°á»£ng vá»›i kiá»ƒu dÃ¡ng HÃ n Quá»‘c', '5bf4cce05f5fa-dFtklPaE.jpg', '2018-10-26 00:00:00', 'Oppo'),
-(4, 'Ão phao cháº§n bÃ´ng', 2200000, 'Ão khoÃ¡c ná»¯ áº¥n tÆ°á»£ng vá»›i kiá»ƒu dÃ¡ng HÃ n Quá»‘c', '5bf4cd10700b6-YCC1zovV.jpg', '2018-10-27 00:00:00', 'Oppo'),
-(5, 'Ão phao ná»¯ dÃ¡ng dÃ i', 2200000, 'Ão khoÃ¡c ná»¯ áº¥n tÆ°á»£ng vá»›i kiá»ƒu dÃ¡ng HÃ n Quá»‘c', '5bf4cd5cb419f-zapm012_xa_800x800.jpg', '2018-10-29 00:00:00', 'iPhone');
+(2, 'Áo phao n?', 54000000, 'Áo phao nữ dáng dài chữ A liền mũ PLBBB', '5bf4cc3fdeb38-aeVDStEx.jpg', '2018-10-25 00:00:00', 'iPhone'),
+(3, 'Áo khoác n?', 2500000, 'Áo khoác nữ ấn tượng với kiểu dáng Hàn Quốc', '5bf4cce05f5fa-dFtklPaE.jpg', '2018-10-26 00:00:00', 'Oppo'),
+(4, 'Áo phao chân bông', 2200000, 'Áo khoác nữ ấn tượng với kiểu dáng Hàn Quốc', '5bf4cd10700b6-YCC1zovV.jpg', '2018-10-27 00:00:00', 'Oppo'),
+(5, 'Áo phao n? dáng dài', 2200000, 'Áo khoác nữ ấn tượng với kiểu dáng Hàn Quốc', '5bf4cd5cb419f-zapm012_xa_800x800.jpg', '2018-10-29 00:00:00', 'iPhone');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +66,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
