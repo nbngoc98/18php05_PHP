@@ -18,8 +18,13 @@
 			mysqli_query($this->connect(), $sql);
 			header("Location: admin.php?controller=list&action=listProduct");
 		}
+		 public function editList($id){
+        	$sql = "SELECT * FROM product WHERE id = $id";
+        	$result = mysqli_query($this->connect(), $sql);
+			return $result;
+        } 
 
-		public function editList($name, $price, $desscription,$image,$id){
+		public function doeditList($name, $price, $desscription,$image,$id){
 			if($name!=''){
 				$sql = "UPDATE product SET name='$name' WHERE id=$id";
 				mysqli_query($this->connect(), $sql);

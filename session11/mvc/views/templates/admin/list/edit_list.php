@@ -1,4 +1,13 @@
-
+<?php
+while ($row = $result->fetch_assoc()) {
+  $id           = $row['id'];
+  $name         = $row['name'];
+  $price        = $row['price'];
+  $imageEdit    = 'public/uploads/'.$row['image'];
+  $image        = $row['image'];
+  $desscription = $row['desscription'];
+}
+?>
   <?php include "views/templates/admin/header.php" ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -18,19 +27,20 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tên sản phẩm</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1"  name="name">
+                  <input type="text" class="form-control" id="exampleInputEmail1"  name="name" value="<?php echo $name ?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Giá sản phẩm</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" name="price">
+                  <input type="text" class="form-control" id="exampleInputPassword1" name="price" value="<?php echo $price ?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Mô tả sản phẩm</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" name="desscription">
+                  <input type="text" class="form-control" id="exampleInputPassword1" name="desscription" value="<?php echo $desscription ?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">File :</label>
                   <input type="file" id="exampleInputFile" name="image">
+                  <img src="<?php  echo $imageEdit?>" width='10%'>
                 </div>
               </div>
               <!-- /.box-body -->

@@ -51,6 +51,7 @@
 						$listModel->deleteList($id);
 						break;
 					case 'edit':
+						
 						if (isset($_POST['edit_product'])) {
 							$id = $_GET['id'];
 							$name = $_POST['name'];
@@ -60,8 +61,11 @@
 							$image = uniqid().'-'.$imageUpload['name'];
 							
 							$listModel = new listModel();
-							$listModel->editList( $name, $price, $desscription, $image, $id);
+							$listModel->doeditList( $name, $price, $desscription, $image, $id);
 						}
+						$id = $_GET['id'];
+						$listModel = new listModel();
+						$result = $listModel->editList($id);
 						include 'views/templates/admin/list/edit_list.php';
 						break;
 					default:
