@@ -1,6 +1,6 @@
 <?php 
-	include 'model/admin_model.php';
-	include 'model/list_model.php';
+	include 'model/admin/admin_model.php';
+	include 'model/admin/list_model.php';
 	class HomeController {
 		//public function xulyYeucau();
 		public function handleReqquest() {
@@ -14,7 +14,7 @@
 						$adminModel = new adminModel();
 						$result = $adminModel->getAdminpage();
 						//Do du lieu ra views
-						include 'views/templates/home_admin.php';
+						include 'views/templates/admin/home_admin.php';
 						break;
 					default:
 						# code...
@@ -25,13 +25,13 @@
 					case 'listProduct':
 						$listModel = new listModel();
 						$result = $listModel->listProduct();
-						include 'views/templates/list/list_product.php';
+						include 'views/templates/admin/list/list_product.php';
 						break;
 					case 'add':
 						if (isset($_POST['add_product'])) {
 							$name = $_POST['name'];
 							$price = $_POST['price'];
-							$description = $_POST['description'];
+							$desscription = $_POST['desscription'];
 							$imageUpload = $_FILES['image'];
 							// 1. lay duoc ten anh de luu vao database
 							$imageName = uniqid().'-'.$imageUpload['name'];
@@ -40,9 +40,9 @@
 							$pathSave = 'public/uploads/';
 							move_uploaded_file($imageUpload['tmp_name'], $pathSave.$imageName);
 							$listModel = new listModel();
-							$listModel->addList($name, $price, $description,$imageName);
+							$listModel->addList($name, $price, $desscription,$imageName);
 						}
-						include 'views/templates/list/add_list.php';
+						include 'views/templates/admin/list/add_list.php';
 						break;
 					case 'delete':
 						# code...
@@ -55,14 +55,14 @@
 							$id = $_GET['id'];
 							$name = $_POST['name'];
 							$price = $_POST['price'];
-							$description = $_POST['description'];
+							$desscription = $_POST['desscription'];
 							$imageUpload  = $_FILES['image'];
 							$image = uniqid().'-'.$imageUpload['name'];
 							
 							$listModel = new listModel();
-							$listModel->editList( $name, $price, $description, $image, $id);
+							$listModel->editList( $name, $price, $desscription, $image, $id);
 						}
-						include 'views/templates/list/edit_list.php';
+						include 'views/templates/admin/list/edit_list.php';
 						break;
 					default:
 						# code...
